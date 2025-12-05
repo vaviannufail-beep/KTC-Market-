@@ -1,0 +1,357 @@
+/* ==================================== */
+/* GLOBAL STYLES & LAYOUT */
+/* ==================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eef2f7; /* Warna latar belakang lembut */
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #004d99; /* Biru gelap modern */
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+section {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Shadow yang lebih dalam */
+}
+
+h2 {
+    color: #004d99;
+    border-bottom: 2px solid #eef2f7;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ==================================== */
+/* BUTTONS & FORMS */
+/* ==================================== */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.back-btn {
+    background-color: #6c757d;
+}
+
+.back-btn:hover {
+    background-color: #5a6268;
+}
+
+.checkout-btn {
+    background-color: #28a745; /* Hijau untuk aksi utama */
+}
+
+.checkout-btn:hover {
+    background-color: #1e7e34;
+}
+
+/* Form Input Styling */
+#checkout-form label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+#checkout-form input, #checkout-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#checkout-form input:focus, #checkout-form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+
+/* ==================================== */
+/* PRODUCT LIST & FILTER */
+/* ==================================== */
+.filter-controls {
+    margin-bottom: 25px;
+    padding: 10px;
+    background-color: #f7f9fc;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.filter-controls button {
+    background-color: #5bc0de;
+    padding: 8px 15px;
+}
+
+.filter-controls button:hover {
+    background-color: #31b0d5;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.product-card {
+    border: none;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+}
+
+.product-card h3 {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.category-tag {
+    font-size: 0.8em;
+    color: #007bff;
+    background-color: #e0f0ff;
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 5px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.product-card p strong {
+    color: #e8491d; /* Warna harga yang menarik perhatian */
+    font-size: 1.3em;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.product-card button {
+    width: 100%;
+    background-color: #e8491d;
+}
+
+.product-card button:hover {
+    background-color: #cc3714;
+}
+
+/* ==================================== */
+/* CART & CHECKOUT */
+/* ==================================== */
+#cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+#cart-table th, #cart-table td {
+    border: 1px solid #eef2f7;
+    padding: 12px;
+    text-align: left;
+}
+
+#cart-table th {
+    background-color: #f8f8f8;
+    color: #555;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+#cart-table td button {
+    padding: 5px 10px;
+    background-color: #dc3545; /* Merah untuk hapus */
+}
+
+#cart-table td button:hover {
+    background-color: #c82333;
+}
+
+#cart-table td input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.cart-summary {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    text-align: right;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.cart-summary button {
+    margin-left: 15px;
+}
+
+.checkout-summary {
+    background-color: #f7f9fc;
+    border: 1px solid #eef2f7;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+/* Payment Selection */
+.payment-method-selection {
+    margin: 25px 0;
+    padding: 20px;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    background-color: #e6f2ff;
+    text-align: left;
+}
+
+.payment-method-selection h3 {
+    margin-top: 0;
+    color: #004d99;
+}
+
+.payment-method-selection label {
+    margin-right: 25px;
+    font-weight: normal;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+/* ==================================== */
+/* PAYMENT PAGE */
+/* ==================================== */
+.payment-container {
+    text-align: center;
+    padding: 40px;
+    background-color: #f7f9fc;
+    border-radius: 10px;
+}
+
+.qris-image {
+    width: 250px;
+    height: 250px;
+    border: 8px solid #007bff;
+    border-radius: 15px;
+    margin: 25px auto;
+    display: block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.confirm-btn {
+    background-color: #00cc66; /* Hijau terang untuk konfirmasi */
+    color: white;
+    padding: 18px 35px;
+    font-size: 1.2em;
+    margin-top: 30px;
+}
+
+.confirm-btn:hover {
+    background-color: #00a851;
+}
+
+.instruction {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 20px;
+}
+
+/* Bank Info Styling */
+.bank-info {
+    border: 1px solid #28a745; /* Border hijau untuk info bank */
+    padding: 15px;
+    margin: 15px auto;
+    width: 80%;
+    max-width: 450px;
+    text-align: left;
+    background-color: #e6ffe6; /* Latar belakang sangat terang */
+    border-left: 6px solid #28a745;
+    border-radius: 8px;
+}
+
+.bank-info p {
+    margin: 5px 0;
+}
+
+/* ==================================== */
+/* SUCCESS PAGE */
+/* ==================================== */
+#success-section {
+    text-align: center;
+    padding: 50px;
+}
+
+#success-section h2 {
+    color: #28a745;
+    font-size: 2.5em;
+}
+
+#success-section p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    color: #555;
+}
